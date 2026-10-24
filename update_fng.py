@@ -14,7 +14,7 @@ for row in rows:
     day = datetime.fromtimestamp(int(row["timestamp"]), tz=timezone.utc).strftime("%Y%m%dT")
     by_day[day] = int(row["value"])
 
-with open("data/FNG.csv", "w", newline="") as f:
+with open("data.csv", "w", newline="") as f:
     w = csv.writer(f)
     for day in sorted(by_day):
         v = by_day[day]
